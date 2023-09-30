@@ -8,8 +8,41 @@ namespace Rifa
 {
     public class Comprador
     {
-        public string Nombre { get; set; }
-        public string MetodoPago { get; set; }
-        public DateTime FechaPago { get; set; }
+        private string _nombre;
+        public string Nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+            set
+            {
+                _nombre = value;
+            }
+        }
+        private string _metodoPago;
+        public string MetodoPago
+        {
+            get
+            {
+                return _metodoPago;
+            }
+            set
+            {
+                _metodoPago = value;
+            }
+        }
+        private DateTime _fechaPago;
+        public DateTime FechaPago
+        {
+            get
+            {
+                return _fechaPago;
+            }
+            set
+            {
+                _fechaPago = value;
+            }
+        }
     }
 }

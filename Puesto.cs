@@ -8,41 +8,41 @@ namespace Rifa
 {
     public class Puesto
     {
-        public int _Numero;
+        private int _numero;
         public int Numero
             {
                 get
                 {
-                    return _Numero;
+                    return _numero;
                 }
                 set
                 {
-                    _Numero = value;
+                    _numero = value;
                 }
             }
 
-        public bool _EstaComprado;
+        private bool _estaComprado;
         public bool EstaComprado
         {
             get
             {
-                return _EstaComprado;
+                return _estaComprado;
             }
             set
             {
-                _EstaComprado = value;
+                _estaComprado = value;
             }
         }
-        public Comprador _Comprador;
+        private Comprador _comprador;
         public Comprador Comprador
         {
             get
             {
-                return _Comprador;
+                return _comprador;
             }
             set
             {
-                _Comprador = value;
+                _comprador = value;
             }
         }
     }
