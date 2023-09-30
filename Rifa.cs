@@ -60,5 +60,9 @@ namespace Rifa
         {
             _fechaSorteo = fechaSorteo;
         }
+        public Rifa(string descripcion)
+        {
+            _descripcion = descripcion;
+        }
     }
 }
