@@ -56,12 +56,9 @@ namespace Rifa
                 _puestos = value;
             }
         }
-        public Rifa(DateTime fechaSorteo)
+        public Rifa(DateTime fechaSorteo, string descripcion)
         {
             _fechaSorteo = fechaSorteo;
-        }
-        public Rifa(string descripcion)
-        {
             _descripcion = descripcion;
         }
     }
