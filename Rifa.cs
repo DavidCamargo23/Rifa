@@ -8,9 +8,46 @@ namespace Rifa
 {
         public class Rifa
         {
-            public string Descripcion { get; set; }
-            public DateTime FechaSorteo { get; set; }
-            public decimal ValorBoleta { get; set; }
-            public List Puestos { get; set; }
+        private string _descripcion;
+        public string Descripcion
+        {
+            get
+            {
+                return _descripcion;
+            }
+            set
+            {
+                _descripcion = value;
+            }
         }
+        private DateTime _fechaSorteo;
+        public DateTime FechaSorteo
+        {
+            get
+            {
+                return _fechaSorteo;
+            }
+            set
+            {
+                _fechaSorteo = value;
+            }
+        }
+        public decimal _ValorBoleta;
+        public Decimal ValorBoleta
+        {
+            get
+            {
+                return _ValorBoleta;
+            }
+            set
+            {
+                _ValorBoleta = value;
+            }
+        }
+        public List<Puesto> Puestos { get; set; }
+        public Rifa(DateTime fechaSorteo)
+        {
+            _fechaSorteo = fechaSorteo;
+        }
+    }
 }
