@@ -20,8 +20,30 @@ namespace Rifa
                     _Numero = value;
                 }
             }
-    
-        public bool EstaComprado { get; set; }
-        public Comprador Comprador { get; set; }
+
+        public bool _EstaComprado;
+        public bool EstaComprado
+        {
+            get
+            {
+                return _EstaComprado;
+            }
+            set
+            {
+                _EstaComprado = value;
+            }
+        }
+        public Comprador _Comprador;
+        public Comprador Comprador
+        {
+            get
+            {
+                return _Comprador;
+            }
+            set
+            {
+                _Comprador = value;
+            }
+        }
     }
 }
