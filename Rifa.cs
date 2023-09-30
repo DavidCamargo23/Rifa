@@ -32,19 +32,30 @@ namespace Rifa
                 _fechaSorteo = value;
             }
         }
-        public decimal _ValorBoleta;
+        private Decimal _valorBoleta;
         public Decimal ValorBoleta
         {
             get
             {
-                return _ValorBoleta;
+                return _valorBoleta;
             }
             set
             {
-                _ValorBoleta = value;
+                _valorBoleta = value;
             }
         }
-        public List<Puesto> Puestos { get; set; }
+        private List<Puesto> _puestos;
+        public List<Puesto> Puestos
+        {
+            get
+            {
+                return _puestos;
+            }
+            set
+            {
+                _puestos = value;
+            }
+        }
         public Rifa(DateTime fechaSorteo)
         {
             _fechaSorteo = fechaSorteo;
