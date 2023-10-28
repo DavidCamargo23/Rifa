@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rifa.Data;
+using System;
 
 namespace Rifa
 {
@@ -16,13 +17,12 @@ namespace Rifa
             int mes = int.Parse(fechaSorteo.Split('/')[1]);
             int year = int.Parse(fechaSorteo.Split('/')[2]);
             DateTime fechaSorteoDate = new DateTime(year, mes, dia);
-            Rifa rifa = new Rifa(fechaSorteoDate,//Descripcciòn )
-
+            //Rifa rifa = new Rifa(fechaSorteoDate)
+            Comprador comprador = new Comprador("Grabriel ", "Garcia Marquez ", new DateTime(2023, 9, 19));
+            CompradorDataManager.saveComprador(comprador);
 
             }
 
         }
 
     }
-    }
-}
