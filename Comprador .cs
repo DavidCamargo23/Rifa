@@ -44,13 +44,10 @@ namespace Rifa
                 _fechaPago = value;
             }
         }
-        public Comprador(string firstName, string lastName)
+        public Comprador(string firstName, string lastName,DateTime FechaPago)
         {
             _nombre = firstName + lastName;
-        }
-        public Comprador(DateTime fechaPago)
-        {
-            _fechaPago = fechaPago;
+            _fechaPago = FechaPago;
         }
     }
 }

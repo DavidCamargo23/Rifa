@@ -1,4 +1,6 @@
-﻿namespace Rifa
+﻿using System;
+
+namespace Rifa
 {
     internal class Program
     {
@@ -15,6 +17,12 @@
             int year = int.Parse(fechaSorteo.Split('/')[2]);
             DateTime fechaSorteoDate = new DateTime(year, mes, dia);
             Rifa rifa = new Rifa(fechaSorteoDate,//Descripcciòn )
+
+
+            }
+
         }
+
+    }
     }
 }
