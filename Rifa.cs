@@ -56,6 +56,7 @@ namespace Rifa
                 _puestos = value;
             }
         }
+        public Comprador Ganador { get; set; }
         public Rifa(DateTime fechaSorteo, string descripcion)
         {
             _fechaSorteo = fechaSorteo;
