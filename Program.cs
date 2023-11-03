@@ -26,7 +26,7 @@ namespace Rifa
                 switch (opcion)
                 {
                     case 1:
-                        if (rifa.Puestos.Any(p => !compradores.Any(c => c.PuestoId == p.Id)))
+                        if (rifa.Puestos.Any(p => !compradores.Any(c => c.numero == p.numero)))
                         {
                             int numeroBoleta = ObtenerNumeroBoletaDisponible(rifa);
                             compradores.Add(new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19), numeroBoleta));
