@@ -32,6 +32,14 @@ namespace Rifa
                 _metodoPago = value;
             }
         }
+        public enum MetodoPago
+        {
+            none = 0,
+            Efectivo = 1,
+            Tarjeta = 2,
+            PSE = 3,
+        }
+
         private DateTime _fechaPago;
         public DateTime FechaPago
         {
@@ -44,10 +52,11 @@ namespace Rifa
                 _fechaPago = value;
             }
         }
-        public Comprador(string firstName, string lastName,DateTime FechaPago)
+        public Comprador(string firstName, string lastName,DateTime FechaPago, MetodoPago metodoPago,numeroboleta)
         {
             _nombre = firstName + lastName;
             _fechaPago = FechaPago;
+            _metodoPago = metodoPago;
         }
     }
 }

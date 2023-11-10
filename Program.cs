@@ -8,8 +8,7 @@ namespace Rifa
     {
         static void Main(string[] args)
         {
-            Rifa rifa = new Rifa(fechaSorteoDate);
-            int leerEntero;
+            Rifa rifa = new Rifa(fechaSorteo);
             CompradorDataManager compradorDataManager = new CompradorDataManager();
 
             Console.WriteLine("Bienvenido al programa de rifas");
@@ -28,8 +27,8 @@ namespace Rifa
                     case 1:
                         if (rifa.Puestos.Any(p => !compradores.Any(c => c.numero == p.numero)))
                         {
-                            int numeroBoleta = ObtenerNumeroBoletaDisponible(rifa);
-                            compradores.Add(new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19), numeroBoleta));
+                            int numeroBoleta = BoletaDisponible(rifa);
+                            compradores.Add(new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
                             Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
                         }
                         else

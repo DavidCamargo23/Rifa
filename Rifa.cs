@@ -20,6 +20,13 @@ namespace Rifa
                 _descripcion = value;
             }
         }
+        public enum TipoRifa
+        {
+            nome = 0,
+            Pequeña = 1,
+            Mediana = 2,   
+            Grande = 3,
+        }
         private DateTime _fechaSorteo;
         public DateTime FechaSorteo
         {
@@ -57,10 +64,12 @@ namespace Rifa
             }
         }
         public Comprador Ganador { get; set; }
-        public Rifa(DateTime fechaSorteo, string descripcion)
+
+        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipo)
         {
             _fechaSorteo = fechaSorteo;
             _descripcion = descripcion;
+            _tipo = tipo;
         }
     }
 }
