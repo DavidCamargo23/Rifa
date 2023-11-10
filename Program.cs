@@ -9,8 +9,7 @@ namespace Rifa
         static void Main(string[] args)
         {
             Rifa rifa = new Rifa(fechaSorteo);
-            CompradorDataManager compradorDataManager = new CompradorDataManager();
-
+            
             Console.WriteLine("Bienvenido al programa de rifas");
 
             while (true)
@@ -25,10 +24,10 @@ namespace Rifa
                 switch (opcion)
                 {
                     case 1:
-                        if (rifa.Puestos.Any(p => !compradores.Any(c => c.numero == p.numero)))
+                        if (rifa.Puestos.Any(p => !comprador.Any(c => c.numero == p.numero)))
                         {
                             int numeroBoleta = BoletaDisponible(rifa);
-                            compradores.Add(new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
+                            CompradoDataManager.addComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
                             Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
                         }
                         else
@@ -39,7 +38,7 @@ namespace Rifa
                     case 2:
                         if (rifa.Ganador != null)
                         {
-                            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre} {rifa.Ganador.Apellido}");
+                            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
                         }
                         else
                         {
