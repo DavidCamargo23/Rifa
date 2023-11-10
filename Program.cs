@@ -9,26 +9,26 @@ namespace Rifa
         static void Main(string[] args)
         {
             Rifa rifa = new Rifa(fechaSorteo);
-            CompradorDataManager compradorDataManager = new CompradorDataManager();
-
+            
             Console.WriteLine("Bienvenido al programa de rifas");
 
             while (true)
             {
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("1. Comprar boleta");
-                Console.WriteLine("2. Mostrar rifa ganada");
-                Console.WriteLine("3. Salir");
+                Console.WriteLine("2. Actualizar datos boleta");
+                Console.WriteLine("3. Mostrar rifa ganada");
+                Console.WriteLine("4. Salir");
 
                 int opcion = LeerEntero();
 
                 switch (opcion)
                 {
                     case 1:
-                        if (rifa.Puestos.Any(p => !compradores.Any(c => c.numero == p.numero)))
+                        if (rifa.Puestos.Any(p => !comprador.Any(c => c.numero == p.numero)))
                         {
                             int numeroBoleta = BoletaDisponible(rifa);
-                            compradores.Add(new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
+                            CompradoDataManager.addComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
                             Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
                         }
                         else
@@ -37,16 +37,19 @@ namespace Rifa
                         }
                         break;
                     case 2:
+                        CompradorDataManager.UpdateComprador(CompradorUpd);
+                        break;
+                    case 3:
                         if (rifa.Ganador != null)
                         {
-                            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre} {rifa.Ganador.Apellido}");
+                            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
                         }
                         else
                         {
                             Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
                         }
                         break;
-                    case 3:
+                    case 4:
                         return;
                 }
             }

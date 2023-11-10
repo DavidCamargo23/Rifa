@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ViEafczvhntdXR2qJxPWZp9W+tbUWPPhKF1neTjhb5XmjSYpUqiAMWjG4UfPsCsCH0/sDyo2JP1EjXB/Dr5ZNQ==",
+  "dgSpecHash": "+qx9zAHYR7UoyCnToyHwqiR7biKd1WPqCC+uWA+w+Ml+2fhRzjioT+TGtWK3frcI4pl9BFkuTcVLTqfjVxMacQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\Source\\Repos\\DavidCamargo23\\Rifa\\Rifa.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
