@@ -44,6 +44,12 @@ namespace Rifa
             {
                 _comprador = value;
             }
+        public Puesto(int Numero, bool Estacomprado, Comprador comprador)
+        {
+            _numero = Numero;
+            _estaComprado = Estacomprado;
+            _comprador = Comprador;
         }
+    }
     }
 }

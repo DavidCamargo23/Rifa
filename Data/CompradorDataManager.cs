@@ -27,7 +27,7 @@ namespace Rifa.Data
             }
             catch (Exception ex) 
             {
-                Console.WriteLine(ex.Message);
+                logger.LogError(ex);
             }
             return comprador;
         }
@@ -48,7 +48,7 @@ namespace Rifa.Data
         {
             try
             {
-                logger.logInformation($"Starting Update.. {comprador.Id}");
+                logger.LogInformation($"Starting Update.. {comprador.Id}");
                 string currentCompradorState = GetFileInfo();
                 var jObjet = JObject.Parse(currentCompradorState);
                 string CompradorJson = JsonConvert.SerializeObject(comprador);
@@ -59,22 +59,50 @@ namespace Rifa.Data
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                logger.LogError(ex);
             }
-            return comprador;
+            
         }
         public static List<Comprador> GetAll()
         {
             return new List<Comprador>();
         }
-        public static Comprador GetComprador(int id)
+        public static Comprador GetComprador(int Id)
         {
-            Comprador comprador = new Comprador("Grabriel ", "Garcia Marquez ", new DateTime(2023, 9, 19), Comprador.MetodoPago 2,200);
-            return comprador;
+            try
+            {
+                logger.LogInformation($"Starting search... {Id}");
+                string currentCompradorState = GetFileInfo();
+                var jObjet = JObject.Parse(currentCompradorState);
+                var compradorJsonValue = (string)jObjet[Id];
+                var jObjetValue = JObject.Parse(compradorJsonValue);
+
+                return new Comprador (jObjetValue);
+
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex);
+            }
+            return null;
         }
-        public static bool DeleteComprador(int id)
+        public static bool DeleteComprador(string Id)
         {
-           return true;
+            try
+            {
+                logger.LogInformation($"Starting Deleiting... {Id}");
+                string currentCompradorState = GetFileInfo();
+                var jObjet = JObject.Parse(currentCompradorState);
+                jObjet.Remove(Id);
+                string outputjson = JsonConvert.SerializeObject(jObjet, Formatting.Indented);
+                WriteFileInfo(outputjson);
+
+            }
+            catch (Exception ex)
+            {
+               logger.LogError(ex);
+            }
+            return true;
         }
     }
 }

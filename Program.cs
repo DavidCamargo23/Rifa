@@ -7,28 +7,33 @@ namespace Rifa
     internal class Program
     {
         static void Main(string[] args)
-        {
-            Rifa rifa = new Rifa(fechaSorteo);
-            
+        {      
             Console.WriteLine("Bienvenido al programa de rifas");
+            Random random = new Random();
+            int numeroRifa = random.Next(0, 1);
+            Console.WriteLine(numeroRifa);
+
+            Console.WriteLine("La rifa de hoy es: "); 
 
             while (true)
             {
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("1. Comprar boleta");
                 Console.WriteLine("2. Actualizar datos boleta");
-                Console.WriteLine("3. Mostrar rifa ganada");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("3. Eliminar datos boleta");
+                Console.WriteLine("4. Buscar datos boleta");
+                Console.WriteLine("5. Mostrar rifa ganada");
+                Console.WriteLine("6. Salir");
 
-                int opcion = LeerEntero();
+                int opcion = int.Parse(Console.ReadLine());
 
                 switch (opcion)
                 {
                     case 1:
-                        if (rifa.Puestos.Any(p => !comprador.Any(c => c.numero == p.numero)))
+                        if 
                         {
                             int numeroBoleta = BoletaDisponible(rifa);
-                            CompradoDataManager.addComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),Comprador.MetodoPago, 200));
+                            CompradorDataManager.AddComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),1, 200));
                             Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
                         }
                         else
@@ -40,6 +45,13 @@ namespace Rifa
                         CompradorDataManager.UpdateComprador(CompradorUpd);
                         break;
                     case 3:
+                        CompradorDataManager.DeleteComprador("7");
+                        break;
+                    case 4:
+                        var getComprador = CompradorDataManager.GetComprador("5");
+                        Console.WriteLine($"el comprador es: {getComprador.Nombre}");
+                        break;
+                    case 5:
                         if (rifa.Ganador != null)
                         {
                             Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
@@ -49,7 +61,7 @@ namespace Rifa
                             Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
                         }
                         break;
-                    case 4:
+                    case 6:
                         return;
                 }
             }
@@ -59,4 +71,5 @@ namespace Rifa
            // private static List<Comprador> compradores = new List<Comprador>();
             }
 
+}
 }

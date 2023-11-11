@@ -20,13 +20,19 @@ namespace Rifa
                 _descripcion = value;
             }
         }
-        public enum TipoRifa
+        private TipoRifa _tipoRifa;
+        public TipoRifa TipoRifa
         {
-            nome = 0,
-            Pequeña = 1,
-            Mediana = 2,   
-            Grande = 3,
+            get
+            {
+                return _tipoRifa;
+            }
+            set
+            {
+                _tipoRifa = value;
+            }
         }
+
         private DateTime _fechaSorteo;
         public DateTime FechaSorteo
         {
@@ -65,11 +71,23 @@ namespace Rifa
         }
         public Comprador Ganador { get; set; }
 
-        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipo)
+        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipoRifa)
         {
             _fechaSorteo = fechaSorteo;
             _descripcion = descripcion;
-            _tipo = tipo;
+            _tipoRifa = tipoRifa;
         }
+        public Rifa(TipoRifa tipoRifa)
+        {
+            _tipoRifa = tipoRifa;
+        }
+        public DateTime fechaSorteo = DateTime.UtcNow;
+    }
+    public enum TipoRifa
+    {
+        nome = 0,
+        Pequeña = 1,
+        Mediana = 2,
+        Grande = 3,
     }
 }
