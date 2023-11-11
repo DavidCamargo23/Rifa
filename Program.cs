@@ -10,9 +10,9 @@ namespace Rifa
         {      
             Console.WriteLine("Bienvenido al programa de rifas");
             Random random = new Random();
-            int numeroRifa = random.Next(0, 1);
+            int numeroRifa = random.Next(4);
             Console.WriteLine(numeroRifa);
-
+            new Rifa(numeroRifa);
             Console.WriteLine("La rifa de hoy es: "); 
 
             while (true)
