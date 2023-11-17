@@ -11,9 +11,34 @@ namespace Rifa
             Console.WriteLine("Bienvenido al programa de rifas");
             Random random = new Random();
             int numeroRifa = random.Next(4);
-            Console.WriteLine(numeroRifa);
-            new Rifa(numeroRifa);
-            Console.WriteLine("La rifa de hoy es: "); 
+             Console.WriteLine(numeroRifa);
+             DateTime fechaSorteo = DateTime.Now;
+             Rifa rifa = new Rifa(fechaSorteo,"Esta rifa es el sorteo anual de fin de año", (TipoRifa)numeroRifa);
+             Console.WriteLine("La rifa de hoy es: ");
+             Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
+            
+             if (numeroRifa == 0)
+             {
+                 Console.WriteLine("Descripción: Esta rifa no está disponible hoy. Lamentamos el inconveniente");
+             }
+             else if (numeroRifa == 1)
+             {
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 100 boletas.");
+                 int numeroBoletas = 100;
+                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+             }
+             else if (numeroRifa == 2)
+             {
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 200 boletas.");
+                 int numeroBoletas = 200;
+                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+             }
+             else if (numeroRifa == 3)
+             {
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 300 boletas.");
+                 int numeroBoletas = 300;
+                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+             }
 
             while (true)
             {
