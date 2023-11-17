@@ -45,6 +45,18 @@ namespace Rifa
                 _fechaSorteo = value;
             }
         }
+        private int _qBoletas;
+        public int QBoletas
+        {
+            get
+            {
+                return _qBoletas;
+            }
+            set
+            {
+                _qBoletas = value;
+            }
+        }
         private Decimal _valorBoleta;
         public Decimal ValorBoleta
         {

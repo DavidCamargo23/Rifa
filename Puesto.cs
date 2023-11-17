@@ -20,19 +20,6 @@ namespace Rifa
                     _numero = value;
                 }
             }
-        private int _qBoletas;
-        public int QBoletas
-            {
-                get
-                {
-                    return _qBoletas;
-                }
-                set
-                {
-                    _qBoletas = value;
-                }
-            }
-
         private bool _estaComprado;
         public bool EstaComprado
         {
@@ -56,12 +43,14 @@ namespace Rifa
             {
                 _comprador = value;
             }
+        }
         public Puesto(int Numero, bool Estacomprado, Comprador comprador)
         {
             _numero = Numero;
             _estaComprado = Estacomprado;
             _comprador = Comprador;
         }
-    }
+        
     }
 }
+

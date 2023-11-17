@@ -1,4 +1,5 @@
-﻿using Rifa;
+﻿using Microsoft.VisualBasic;
+using Rifa;
 using Rifa.Data;
 using System;
 
@@ -14,6 +15,7 @@ namespace Rifa
             Console.WriteLine(numeroRifa);
             DateTime fechaSorteo = DateTime.Now;
             Console.WriteLine("La rifa de hoy es: ");
+            int Qboletas = 0;
                         
              if (numeroRifa == 0)
              {
@@ -21,21 +23,21 @@ namespace Rifa
              }
              else if (numeroRifa == 1)
              {
-                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 5 boletas.");
-                 int Qboletas = 5;
+                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es pequeña la cual contará hasta con 5 boletas.");
+                 Qboletas = 5;
              }
              else if (numeroRifa == 2)
              {
-                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 10 boletas.");
-                 int Qboletas = 10;
+                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es Mediana la cual contará hasta con 10 boletas.");
+                 Qboletas = 10;
              }
              else if (numeroRifa == 3)
              {
-                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 20 boletas.");
-                 int Qboletas = 20;
+                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es Grande la cual contará hasta con 20 boletas.");
+                 Qboletas = 20;
              }
 
             while (true)
@@ -51,23 +53,35 @@ namespace Rifa
 
                 int opcion = int.Parse(Console.ReadLine());
 
+                CompradorDataManager.AddComprador(new Comprador("david", "gonzales", fechaSorteo, MetodoPago.PSE, 200));
+
                 switch (opcion)
                 {
                     case 1:
-                        if (Qboletas < Qboletas)
-                        {
                             Console.WriteLine("Digite su primer nombre");
-                            Srtring firstname = Console.ReadLine();
+                            string firstName = Console.ReadLine();
                             Console.WriteLine("Digite su apellido");
-                            Srtring Lastname = Console.ReadLine();
-                            CompradorDataManager.AddComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),1, 200));
-                            Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No hay boletas disponibles.");
-                        }
-                        break;
+                            string lastName = Console.ReadLine();
+                            Console.WriteLine("Seleccione su metodo de pago:");
+                            Console.WriteLine("Efectivo = 1");
+                            Console.WriteLine("Tarjeta = 2");
+                            Console.WriteLine("PSE = 3");
+                            int MetodoPago = int.Parse(Console.ReadLine());
+                            Random random1 = new Random();
+                            List<int> numerosSeleccionados = new List<int>();
+                            int numeroSeleccionado = ObtenerNumeroAleatorioNoRepetido(random1, numerosSeleccionados);
+                            Console.WriteLine("El numero de la boleta es: " + numeroSeleccionado);
+                            int ObtenerNumeroAleatorioNoRepetido(Random random1, List<int> numerosSeleccionados) {
+                            List<int> numerosPosibles = new List<int> {Qboletas};
+                            numerosPosibles.RemoveAll(n => numerosSeleccionados.Contains(n));
+                            int indice = random1.Next(0, numerosPosibles.Count);
+                            int numeroAleatorio = numerosPosibles[indice];
+                            numerosSeleccionados.Add(numeroAleatorio);    
+                            return numeroAleatorio;      
+                            CompradorDataManager.AddComprador (new Comprador(firstName, lastName, fechaSorteo,(MetodoPago)MetodoPago, numeroSeleccionado));
+                            Console.WriteLine($"Boleta {numeroSeleccionado} comprada exitosamente.");
+                        
+                             break;
                     case 2:
                         CompradorDataManager.UpdateComprador(CompradorUpd);
                         break;

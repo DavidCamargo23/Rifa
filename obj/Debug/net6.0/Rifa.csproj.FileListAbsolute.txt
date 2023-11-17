@@ -13,3 +13,5 @@ C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\obj\Debug\net6.0\Rifa.pdb
 C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\obj\Debug\net6.0\Rifa.genruntimeconfig.cache
 C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\obj\Debug\net6.0\ref\Rifa.dll
 C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\obj\Debug\net6.0\Rifa.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Source\Repos\DavidCamargo23\Rifa\obj\Debug\net6.0\Rifa.csproj.CopyComplete

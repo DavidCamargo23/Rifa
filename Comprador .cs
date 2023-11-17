@@ -67,7 +67,7 @@ namespace Rifa
         }
         public Comprador(string firstName, string lastName,DateTime FechaPago, MetodoPago MetodoPago,int NumeroBoleta)
         {
-            _nombre = firstName + lastName;
+            _nombre = firstName +""+ lastName;
             _fechaPago = FechaPago;
             _metodoPago = MetodoPago;
             _numeroBoleta = NumeroBoleta;
