@@ -11,37 +11,36 @@ namespace Rifa
             Console.WriteLine("Bienvenido al programa de rifas");
             Random random = new Random();
             int numeroRifa = random.Next(4);
-             Console.WriteLine(numeroRifa);
-             DateTime fechaSorteo = DateTime.Now;
-             Rifa rifa = new Rifa(fechaSorteo,"Esta rifa es el sorteo anual de fin de año", (TipoRifa)numeroRifa);
-             Console.WriteLine("La rifa de hoy es: ");
-             Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
-            
+            Console.WriteLine(numeroRifa);
+            DateTime fechaSorteo = DateTime.Now;
+            Console.WriteLine("La rifa de hoy es: ");
+                        
              if (numeroRifa == 0)
              {
                  Console.WriteLine("Descripción: Esta rifa no está disponible hoy. Lamentamos el inconveniente");
              }
              else if (numeroRifa == 1)
              {
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 100 boletas.");
-                 int numeroBoletas = 100;
-                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 5 boletas.");
+                 int Qboletas = 5;
              }
              else if (numeroRifa == 2)
              {
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 200 boletas.");
-                 int numeroBoletas = 200;
-                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 10 boletas.");
+                 int Qboletas = 10;
              }
              else if (numeroRifa == 3)
              {
-                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 300 boletas.");
-                 int numeroBoletas = 300;
-                 Console.WriteLine($"Número de rifa al azar: {numeroBoletas}");
+                 Console.WriteLine($"Fecha del sorteo: {rifa.FechaSorteo}");
+                 Console.WriteLine($"Descripción: la rifa de hoy es {rifa.TipoRifa} la cual contará hasta con 20 boletas.");
+                 int Qboletas = 20;
              }
 
             while (true)
             {
+                Rifa rifa = new Rifa(fechaSorteo,"Esta rifa es el sorteo anual de fin de año", (TipoRifa)numeroRifa);
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("1. Comprar boleta");
                 Console.WriteLine("2. Actualizar datos boleta");
@@ -55,9 +54,12 @@ namespace Rifa
                 switch (opcion)
                 {
                     case 1:
-                        if 
+                        if (Qboletas < Qboletas)
                         {
-                            int numeroBoleta = BoletaDisponible(rifa);
+                            Console.WriteLine("Digite su primer nombre");
+                            Srtring firstname = Console.ReadLine();
+                            Console.WriteLine("Digite su apellido");
+                            Srtring Lastname = Console.ReadLine();
                             CompradorDataManager.AddComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),1, 200));
                             Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
                         }
