@@ -57,11 +57,27 @@ namespace Rifa
                         if (Qboletas < Qboletas)
                         {
                             Console.WriteLine("Digite su primer nombre");
-                            Srtring firstname = Console.ReadLine();
+                            Srtring firstName = Console.ReadLine();
                             Console.WriteLine("Digite su apellido");
-                            Srtring Lastname = Console.ReadLine();
-                            CompradorDataManager.AddComprador (new Comprador("Grabriel", "Garcia Marquez", new DateTime(2023, 9, 19),1, 200));
-                            Console.WriteLine($"Boleta {numeroBoleta} comprada exitosamente.");
+                            Srtring lastName = Console.ReadLine();
+                            Console.WriteLine("Seleccione su metodo de pago:");
+                            Console.WriteLine("Efectivo = 1");
+                            Console.WriteLine("Tarjeta = 2");
+                            Console.WriteLine("PSE = 3");
+                            int MetodoPago = int.Parse(Console.ReadLine());
+                            Random random1 = new Random();
+                            List<int> numerosSeleccionados = new List<int>();
+                            int numeroSeleccionado = ObtenerNumeroAleatorioNoRepetido(random1, numerosSeleccionados);
+                            Console.WriteLine("El numero de la boleta es: " + numeroSeleccionado);
+                            int ObtenerNumeroAleatorioNoRepetido(Random random1, List<int> numerosSeleccionados) {
+                            List<int> numerosPosibles = new List<int> {QBoletas};
+                            numerosPosibles.RemoveAll(n => numerosSeleccionados.Contains(n));
+                            int indice = random1.Next(0, numerosPosibles.Count);
+                            int numeroAleatorio = numerosPosibles[indice];
+                            numerosSeleccionados.Add(numeroAleatorio);    
+                            return numeroAleatorio;         
+                            CompradorDataManager.AddComprador (new Comprador(firstName, lastName, fechaSorteo,MetodoPago, numeroSeleccionado));
+                            Console.WriteLine($"Boleta {numeroSeleccionado} comprada exitosamente.");
                         }
                         else
                         {
