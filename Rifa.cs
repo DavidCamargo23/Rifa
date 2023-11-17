@@ -85,7 +85,7 @@ namespace Rifa
     }
     public enum TipoRifa
     {
-        nome = 0,
+        None = 0,
         Pequeña = 1,
         Mediana = 2,
         Grande = 3,
