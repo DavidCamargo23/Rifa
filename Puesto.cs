@@ -20,6 +20,18 @@ namespace Rifa
                     _numero = value;
                 }
             }
+        private int _qBoletas;
+        public int QBoletas
+            {
+                get
+                {
+                    return _qBoletas;
+                }
+                set
+                {
+                    _qBoletas = value;
+                }
+            }
 
         private bool _estaComprado;
         public bool EstaComprado
