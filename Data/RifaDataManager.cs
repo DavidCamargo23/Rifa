@@ -39,21 +39,21 @@ namespace Rifa.Data
         {
             File.WriteAllText(DATA_FILE, json);
         }
-        public static void saveComprador(Comprador comprador)
+        public static void SaveRifa(Rifa rifa)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(comprador.Nombre);
+            Console.WriteLine(rifa.Id);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        public static void UpdateComprador(Comprador comprador)
+        public static void UpdateRifa(Rifa rifa)
         {
             try
             {
-                logger.LogInformation($"Starting Update.. {comprador.Id}");
-                string currentCompradorState = GetFileInfo();
-                var jObjet = JObject.Parse(currentCompradorState);
-                string CompradorJson = JsonConvert.SerializeObject(comprador);
-                jObjet[$"{comprador.Id}"] = CompradorJson;
+                logger.LogInformation($"Starting Update.. {rifa.Id}");
+                string currentRifaState = GetFileInfo();
+                var jObjet = JObject.Parse(currentRifaState);
+                string RifaJson = JsonConvert.SerializeObject(rifa);
+                jObjet[$"{rifa.Id}"] = RifaJson;
                 string outputjson = JsonConvert.SerializeObject(jObjet, Formatting.Indented);
                 WriteFileInfo(outputjson);
 
@@ -64,21 +64,21 @@ namespace Rifa.Data
             }
 
         }
-        public static List<Comprador> GetAll()
+        public static List<Rifa> GetAll()
         {
-            return new List<Comprador>();
+            return new List<Rifa>();
         }
-        public static Comprador GetComprador(int Id)
+        public static Rifa GetRifa(int Id)
         {
             try
             {
                 logger.LogInformation($"Starting search... {Id}");
-                string currentCompradorState = GetFileInfo();
-                var jObjet = JObject.Parse(currentCompradorState);
-                var compradorJsonValue = (string)jObjet[Id];
-                var jObjetValue = JObject.Parse(compradorJsonValue);
+                string currentRifaState = GetFileInfo();
+                var jObjet = JObject.Parse(currentRifaState);
+                var RifaJsonValue = (string)jObjet[Id];
+                var jObjetValue = JObject.Parse(RifaJsonValue);
 
-                return new Comprador(jObjetValue);
+                return new Rifa(jObjetValue);
 
             }
             catch (Exception ex)
@@ -87,13 +87,13 @@ namespace Rifa.Data
             }
             return null;
         }
-        public static bool DeleteComprador(string Id)
+        public static bool DeleteRifa(string Id)
         {
             try
             {
                 logger.LogInformation($"Starting Deleiting... {Id}");
-                string currentCompradorState = GetFileInfo();
-                var jObjet = JObject.Parse(currentCompradorState);
+                string currentRifaState = GetFileInfo();
+                var jObjet = JObject.Parse(currentRifaState);
                 jObjet.Remove(Id);
                 string outputjson = JsonConvert.SerializeObject(jObjet, Formatting.Indented);
                 WriteFileInfo(outputjson);

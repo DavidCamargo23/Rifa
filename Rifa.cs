@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using Rifa;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -83,7 +85,7 @@ namespace Rifa
                 _puestos = value;
             }
         }
-        public Comprador Ganador { get; set; }
+        public Rifa Ganador { get; set; }
 
         public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipoRifa, int QBoletas)
         {
@@ -97,6 +99,10 @@ namespace Rifa
             _tipoRifa = tipoRifa;
         }
         public DateTime fechaSorteo = DateTime.UtcNow;
+        public Rifa(JObject json)
+        {
+            Id = (string)json["Id"];
+        }
     }
     public enum TipoRifa
     {

@@ -39,7 +39,7 @@ namespace Rifa.Data
         {
             File.WriteAllText(DATA_FILE, json);
         }
-        public static void saveComprador(Comprador comprador) { 
+        public static void SaveComprador(Comprador comprador) { 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(comprador.Nombre);
             Console.ForegroundColor = ConsoleColor.White;
