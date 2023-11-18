@@ -51,56 +51,56 @@ namespace Rifa
 
                 int opcion = int.Parse(Console.ReadLine());
 
-                switch (opcion)
-                {
-                    case 1:
-                            Console.WriteLine("Digite su primer nombre");
-                            string firstName = Console.ReadLine();
-                            Console.WriteLine("Digite su apellido");
-                            string lastName = Console.ReadLine();
-                            Console.WriteLine("Seleccione su metodo de pago:");
-                            Console.WriteLine("Efectivo = 1");
-                            Console.WriteLine("Tarjeta = 2");
-                            Console.WriteLine("PSE = 3");
-                            int MetodoPago = int.Parse(Console.ReadLine());
-                            Random random1 = new Random();
-                            List<int> numerosSeleccionados = new List<int>();
-                            int numeroSeleccionado = ObtenerNumeroAleatorioNoRepetido(random1, numerosSeleccionados);
-                            Console.WriteLine("El numero de la boleta es: " + numeroSeleccionado);
-                            int ObtenerNumeroAleatorioNoRepetido(Random random1, List<int> numerosSeleccionados) {
-                            List<int> numerosPosibles = new List<int> {Qboletas};
-                            numerosPosibles.RemoveAll(n => numerosSeleccionados.Contains(n));
-                            int indice = random1.Next(0, numerosPosibles.Count);
-                            int numeroAleatorio = numerosPosibles[indice];
-                            numerosSeleccionados.Add(numeroAleatorio);    
-                            return numeroAleatorio;      
-                            CompradorDataManager.AddComprador (new Comprador(firstName, lastName, fechaSorteo,(MetodoPago)MetodoPago, numeroSeleccionado));
-                            Console.WriteLine($"Boleta {numeroSeleccionado} comprada exitosamente.");
+                //switch (opcion)
+                //{
+                //    case 1:
+                //            Console.WriteLine("Digite su primer nombre");
+                //            string firstName = Console.ReadLine();
+                //            Console.WriteLine("Digite su apellido");
+                //            string lastName = Console.ReadLine();
+                //            Console.WriteLine("Seleccione su metodo de pago:");
+                //            Console.WriteLine("Efectivo = 1");
+                //            Console.WriteLine("Tarjeta = 2");
+                //            Console.WriteLine("PSE = 3");
+                //            int MetodoPago = int.Parse(Console.ReadLine());
+                //            Random random1 = new Random();
+                //            List<int> numerosSeleccionados = new List<int>();
+                //            int numeroSeleccionado = ObtenerNumeroAleatorioNoRepetido(random1, numerosSeleccionados);
+                //            Console.WriteLine("El numero de la boleta es: " + numeroSeleccionado);
+                //            int ObtenerNumeroAleatorioNoRepetido(Random random1, List<int> numerosSeleccionados) {
+                //            List<int> numerosPosibles = new List<int> {Qboletas};
+                //            numerosPosibles.RemoveAll(n => numerosSeleccionados.Contains(n));
+                //            int indice = random1.Next(0, numerosPosibles.Count);
+                //            int numeroAleatorio = numerosPosibles[indice];
+                //            numerosSeleccionados.Add(numeroAleatorio);    
+                //            return numeroAleatorio;      
+                //            CompradorDataManager.AddComprador (new Comprador(firstName, lastName, fechaSorteo,(MetodoPago)MetodoPago, numeroSeleccionado));
+                //            Console.WriteLine($"Boleta {numeroSeleccionado} comprada exitosamente.");
                         
-                             break;
-                    case 2:
-                        CompradorDataManager.UpdateComprador(CompradorUpd);
-                        break;
-                    case 3:
-                        CompradorDataManager.DeleteComprador("7");
-                        break;
-                    case 4:
-                        var getComprador = CompradorDataManager.GetComprador("5");
-                        Console.WriteLine($"el comprador es: {getComprador.Nombre}");
-                        break;
-                    case 5:
-                        if (rifa.Ganador != null)
-                        {
-                            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
-                        }
-                        break;
-                    case 6:
-                        return;
-                }
+                //             break;
+                //    case 2:
+                //        CompradorDataManager.UpdateComprador(CompradorUpd);
+                //        break;
+                //    case 3:
+                //        CompradorDataManager.DeleteComprador("7");
+                //        break;
+                //    case 4:
+                //        var getComprador = CompradorDataManager.GetComprador("5");
+                //        Console.WriteLine($"el comprador es: {getComprador.Nombre}");
+                //        break;
+                //    case 5:
+                //        if (rifa.Ganador != null)
+                //        {
+                //            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
+                //        }
+                //        else
+                //        {
+                //            Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
+                //        }
+                //        break;
+                //    case 6:
+                //        return;
+                //}
             }
 
            // Comprador comprador = new Comprador("Grabriel ", "Garcia Marquez ", new DateTime(2023, 9, 19));
