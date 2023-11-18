@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Rifa
 {
-        public class Rifa
-        {
+    public class Rifa
+    {
+        private string _id;
+        public string Id { get => _id; set => _id = value; }
         private string _descripcion;
         public string Descripcion
         {

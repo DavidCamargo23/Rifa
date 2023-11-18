@@ -12,28 +12,32 @@ namespace Rifa
             Console.WriteLine("Bienvenido al programa de rifas");
             Random random = new Random();
             int numeroRifa = random.Next(4);
-            Console.WriteLine(numeroRifa);
             DateTime fechaSorteo = DateTime.Now;
-            Console.WriteLine("La rifa de hoy es: ");
             int Qboletas = 0;
-                        
-             if (numeroRifa == 0)
+            Console.WriteLine("Por favor seleccione el tipo de rifa en la que desea participar.");
+            Console.WriteLine("1. Rifa pequeña.");
+            Console.WriteLine("2. Rifa Mediana");
+            Console.WriteLine("3. Rifa Grande");
+            Console.WriteLine("La sugerencia automatica del prgrama es: "+numeroRifa);
+            int NRifa = int.Parse(Console.ReadLine());
+
+            if (NRifa == 0)
              {
                  Console.WriteLine("Descripción: Esta rifa no está disponible hoy. Lamentamos el inconveniente");
              }
-             else if (numeroRifa == 1)
+             else if (NRifa == 1)
              {
                  Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
                  Console.WriteLine($"Descripción: la rifa de hoy es pequeña la cual contará hasta con 5 boletas.");
                  Qboletas = 5;
              }
-             else if (numeroRifa == 2)
+             else if (NRifa == 2)
              {
                  Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
                  Console.WriteLine($"Descripción: la rifa de hoy es Mediana la cual contará hasta con 10 boletas.");
                  Qboletas = 10;
              }
-             else if (numeroRifa == 3)
+             else if (NRifa == 3)
              {
                  Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
                  Console.WriteLine($"Descripción: la rifa de hoy es Grande la cual contará hasta con 20 boletas.");
@@ -42,7 +46,6 @@ namespace Rifa
 
             while (true)
             {
-                Rifa rifa = new Rifa(fechaSorteo,"Esta rifa es el sorteo anual de fin de año", (TipoRifa)numeroRifa);
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("1. Comprar boleta");
                 Console.WriteLine("2. Actualizar datos boleta");
@@ -52,8 +55,6 @@ namespace Rifa
                 Console.WriteLine("6. Salir");
 
                 int opcion = int.Parse(Console.ReadLine());
-
-                CompradorDataManager.AddComprador(new Comprador("david", "gonzales", fechaSorteo, MetodoPago.PSE, 200));
 
                 switch (opcion)
                 {
