@@ -85,11 +85,12 @@ namespace Rifa
         }
         public Comprador Ganador { get; set; }
 
-        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipoRifa)
+        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipoRifa, int QBoletas)
         {
             _fechaSorteo = fechaSorteo;
             _descripcion = descripcion;
             _tipoRifa = tipoRifa;
+            _qBoletas=QBoletas;
         }
         public Rifa(TipoRifa tipoRifa)
         {

@@ -12,7 +12,7 @@ namespace Rifa.Data
     {
 
         private const string DATA_FILE = "C:\\Users\\USUARIO\\Source\\Repos\\DavidCamargo23\\Rifa\\Data\\Rifa.json";
-        public static Rifa AddComprador(Rifa rifa)
+        public static Rifa AddRifa(Rifa rifa)
         {
             try
             {

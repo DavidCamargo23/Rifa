@@ -27,21 +27,16 @@ namespace Rifa
              }
              else if (NRifa == 1)
              {
-                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es pequeña la cual contará hasta con 5 boletas.");
-                 Qboletas = 5;
+                RifaDataManager.AddRifa(new Rifa(fechaSorteo,"Descripción: la rifa de hoy es pequeña la cual contará hasta con 5 boletas.", (TipoRifa)1,5));
+                
              }
              else if (NRifa == 2)
              {
-                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es Mediana la cual contará hasta con 10 boletas.");
-                 Qboletas = 10;
+                RifaDataManager.AddRifa(new Rifa(fechaSorteo, "Descripción: la rifa de hoy es Mediana la cual contará hasta con 10 boletas.", (TipoRifa)1, 10));
              }
              else if (NRifa == 3)
              {
-                 Console.WriteLine($"Fecha del sorteo: {fechaSorteo}");
-                 Console.WriteLine($"Descripción: la rifa de hoy es Grande la cual contará hasta con 20 boletas.");
-                 Qboletas = 20;
+                RifaDataManager.AddRifa(new Rifa(fechaSorteo, "Descripción: la rifa de hoy es Grande la cual contará hasta con 20 boletas.", (TipoRifa)1, 20));
              }
 
             while (true)
