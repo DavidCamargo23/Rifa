@@ -1,3 +1,5 @@
 {
-  "1": "{\"Id\":\"1\",\"Nombre\":\"davidgonzales\",\"MetodoPago\":3,\"NumeroBoleta\":200,\"FechaPago\":\"2023-11-18T11:11:55.248217-05:00\"}"
+  "1": "{\"Id\":\"1\",\"Nombre\":\"davidgonzales\",\"MetodoPago\":3,\"NumeroBoleta\":200,\"FechaPago\":\"2023-11-18T11:11:55.248217-05:00\"}",
+  "2": "{\"Id\":\"2\",\"Nombre\":\"ddcc\",\"MetodoPago\":2,\"NumeroBoleta\":2,\"FechaPago\":\"2023-11-25T11:22:17.2704057-05:00\"}",
+  "3": "{\"Id\":\"3\",\"Nombre\":\"CC DD\",\"MetodoPago\":3,\"NumeroBoleta\":3,\"FechaPago\":\"2023-11-25T11:31:31.5766611-05:00\"}"
 }

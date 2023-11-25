@@ -72,10 +72,9 @@ namespace Rifa.Data
         {
             try
             {
-                logger.LogInformation($"Starting search... {Id}");
                 string currentRifaState = GetFileInfo();
                 var jObjet = JObject.Parse(currentRifaState);
-                var RifaJsonValue = (string)jObjet[Id];
+                var RifaJsonValue = (string)jObjet[$"{Id}"];
                 var jObjetValue = JObject.Parse(RifaJsonValue);
 
                 return new Rifa(jObjetValue);
@@ -91,13 +90,11 @@ namespace Rifa.Data
         {
             try
             {
-                logger.LogInformation($"Starting Deleiting... {Id}");
                 string currentRifaState = GetFileInfo();
                 var jObjet = JObject.Parse(currentRifaState);
                 jObjet.Remove(Id);
                 string outputjson = JsonConvert.SerializeObject(jObjet, Formatting.Indented);
                 WriteFileInfo(outputjson);
-
             }
             catch (Exception ex)
             {

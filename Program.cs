@@ -8,42 +8,58 @@ namespace Rifa
     internal class Program
     {
         static void Main(string[] args)
-        {      
-            Console.WriteLine("Bienvenido al programa de rifas");
-            RifaDataManager.DeleteRifa("1");
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("****************************** Bienvenido al programa de rifas ******************************");
+            Console.ForegroundColor = ConsoleColor.White;
+            RifaDataManager.DeleteRifa("1") ;
+            RifaDataManager.DeleteRifa("2");
+            RifaDataManager.DeleteRifa("3");
             Random random = new Random();
-            int numeroRifa = random.Next(4);
+            int numeroRifa = random.Next(1,4);
             DateTime fechaSorteo = DateTime.Now;
             int Qboletas = 0;
-            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "Descripción: la rifa de hoy es Grande la cual contará hasta con 20 boletas.", (TipoRifa)1, 20));
-            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "Descripción: la rifa de hoy es Mediana la cual contará hasta con 10 boletas.", (TipoRifa)1, 10));
-            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "Descripción: la rifa de hoy es pequeña la cual contará hasta con 5 boletas.", (TipoRifa)1, 5));
+            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "********** La rifa de hoy es pequeña la cual contará hasta con 5 boletas. **********", (TipoRifa)1, 5));
+            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "********** La rifa de hoy es Mediana la cual contará hasta con 10 boletas. **********", (TipoRifa)2, 10));
+            RifaDataManager.AddRifa(new Rifa(fechaSorteo, "********** La rifa de hoy es Grande la cual contará hasta con 20 boletas. **********", (TipoRifa)3, 20));
             Console.WriteLine("Por favor seleccione el tipo de rifa en la que desea participar.");
             Console.WriteLine("1. Rifa pequeña.");
             Console.WriteLine("2. Rifa Mediana");
             Console.WriteLine("3. Rifa Grande");
-            Console.WriteLine("La sugerencia automatica del prgrama es: "+numeroRifa);
+            Console.WriteLine("La sugerencia automatica del programa es: "+numeroRifa);
             int NRifa = int.Parse(Console.ReadLine());
-
+            Rifa todayRifa = new Rifa();
+     
             if (NRifa == 0)
              {
                  Console.WriteLine("Descripción: Esta rifa no está disponible hoy. Lamentamos el inconveniente");
              }
              else if (NRifa == 1)
              {
-                RifaDataManager.GetRifa(3);
-                Qboletas = 5;
+                todayRifa = RifaDataManager.GetRifa(1);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(todayRifa.Descripcion);
+                Console.ForegroundColor = ConsoleColor.White;
 
             }
              else if (NRifa == 2)
              {
-                RifaDataManager.GetRifa(2);
-                Qboletas = 10;
+                todayRifa = RifaDataManager.GetRifa(2);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(todayRifa.Descripcion);
+                Console.ForegroundColor = ConsoleColor.White;
             }
              else if (NRifa == 3)
              {
-                RifaDataManager.GetRifa(1);
-                Qboletas = 20;
+                todayRifa = RifaDataManager.GetRifa(3);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(todayRifa.Descripcion);
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                Console.WriteLine("Número erróneo. Por favor, selecciona un número válido.");
+                return;
             }
 
             while (true)
@@ -58,53 +74,53 @@ namespace Rifa
 
                 int opcion = int.Parse(Console.ReadLine());
 
-                //switch (opcion)
-                //{
-                //    case 1:
-                //            Console.WriteLine("Digite su primer nombre");
-                //            string firstName = Console.ReadLine();
-                //            Console.WriteLine("Digite su apellido");
-                //            string lastName = Console.ReadLine();
-                //            Console.WriteLine("Seleccione su metodo de pago:");
-                //            Console.WriteLine("Efectivo = 1");
-                //            Console.WriteLine("Tarjeta = 2");
-                //            Console.WriteLine("PSE = 3");
-                //            int MetodoPago = int.Parse(Console.ReadLine());
-                //            Random random = new Random();
-                //            int numeroRifa = random.Next(4);
-                //            CompradorDataManager.AddComprador (new Comprador(firstName, lastName, fechaSorteo,(MetodoPago)MetodoPago, numeroSeleccionado));
-                //            Console.WriteLine($"Boleta {numeroSeleccionado} comprada exitosamente.");
+                switch (opcion)
+                {
+                    case 1:
+                        Console.WriteLine("Digite su primer nombre");
+                        string firstName = Console.ReadLine();
+                        Console.WriteLine("Digite su apellido");
+                        string lastName = Console.ReadLine();
+                        Console.WriteLine("Seleccione su metodo de pago:");
+                        Console.WriteLine("Efectivo = 1");
+                        Console.WriteLine("Tarjeta = 2");
+                        Console.WriteLine("PSE = 3");
+                        int MetodoPago = int.Parse(Console.ReadLine());
+                        Random randomb = new Random();
+                        int numeroBoleto = randomb.Next(1, todayRifa.QBoletas);
+                        CompradorDataManager.AddComprador(new Comprador(firstName, lastName, fechaSorteo, (MetodoPago)MetodoPago, numeroBoleto));
+                        Console.WriteLine($"Boleta {numeroBoleto} comprada exitosamente.");
 
-                //             break;
-                //    case 2:
-                //        CompradorDataManager.UpdateComprador(CompradorUpd);
-                //        break;
-                //    case 3:
-                //        CompradorDataManager.DeleteComprador("7");
-                //        break;
-                //    case 4:
-                //        var getComprador = CompradorDataManager.GetComprador("5");
+                        break;
+                    case 2:
+                     //   CompradorDataManager.UpdateComprador(CompradorUpd);
+                        break;
+                    case 3:
+                        CompradorDataManager.DeleteComprador("1");
+                        break;
+                    case 4:
+                //        var getComprador = CompradorDataManager.GetComprador("1");
                 //        Console.WriteLine($"el comprador es: {getComprador.Nombre}");
-                //        break;
-                //    case 5:
-                //        if (rifa.Ganador != null)
-                //        {
-                //            Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
-                //        }
-                //        else
-                //        {
-                //            Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
-                //        }
-                //        break;
-                //    case 6:
-                //        return;
-                //}
+                        break;
+             ////       case 5:
+             //           if ( != null)
+             //           {
+             //               Console.WriteLine($"Ganador: {rifa.Ganador.Nombre}");
+             //           }
+             //           else
+             //           {
+             //               Console.WriteLine("Aún no se ha realizado el sorteo de la rifa ganada.");
+             //           }
+             // //          break;
+                    case 6:
+                        return;
+                }
             }
 
-           // Comprador comprador = new Comprador("Grabriel ", "Garcia Marquez ", new DateTime(2023, 9, 19));
-           // CompradorDataManager.saveComprador(comprador);
-           // private static List<Comprador> compradores = new List<Comprador>();
-            }
+            // Comprador comprador = new Comprador("Grabriel ", "Garcia Marquez ", new DateTime(2023, 9, 19));
+            // CompradorDataManager.saveComprador(comprador);
+            // private static List<Comprador> compradores = new List<Comprador>();
+        }
 
 }
 }

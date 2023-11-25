@@ -87,21 +87,27 @@ namespace Rifa
         }
         public Rifa Ganador { get; set; }
 
-        public Rifa(DateTime fechaSorteo, string descripcion, TipoRifa tipoRifa, int QBoletas)
+        public Rifa(DateTime FechaSorteo, string Descripcion, TipoRifa TipoRifa, int QBoletas)
         {
-            _fechaSorteo = fechaSorteo;
-            _descripcion = descripcion;
-            _tipoRifa = tipoRifa;
+            _fechaSorteo = FechaSorteo;
+            _descripcion = Descripcion;
+            _tipoRifa = TipoRifa;
             _qBoletas=QBoletas;
         }
         public Rifa(TipoRifa tipoRifa)
         {
             _tipoRifa = tipoRifa;
         }
-        public DateTime fechaSorteo = DateTime.UtcNow;
         public Rifa(JObject json)
         {
             Id = (string)json["Id"];
+            FechaSorteo = (DateTime)json["FechaSorteo"];
+            Descripcion = (string)json["Descripcion"];
+            TipoRifa = (TipoRifa)(int)json["TipoRifa"];
+            QBoletas = (int)json["QBoletas"];
+        }
+        public Rifa()
+        {
         }
     }
     public enum TipoRifa
