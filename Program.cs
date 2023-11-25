@@ -88,19 +88,36 @@ namespace Rifa
                         int MetodoPago = int.Parse(Console.ReadLine());
                         Random randomb = new Random();
                         int numeroBoleto = randomb.Next(1, todayRifa.QBoletas);
-                        CompradorDataManager.AddComprador(new Comprador(firstName, lastName, fechaSorteo, (MetodoPago)MetodoPago, numeroBoleto));
+                        var Compradorx = CompradorDataManager.AddComprador(new Comprador(firstName, lastName, fechaSorteo, (MetodoPago)MetodoPago, numeroBoleto));
+                        Console.WriteLine("--------------------------------------------------");
+                        Console.WriteLine("|                                                |");
+                        Console.WriteLine("|                 BOLETO DE RIFA                 |");
+                        Console.WriteLine("|                                                |");
+                        Console.WriteLine("|  Número de Rifa: " + numeroBoleto + "                |");
+                        Console.WriteLine("|  Nombre: " + firstName + lastName + "               |");
+                        Console.WriteLine("|  Metodo de pago: " + MetodoPago + "            |");
+                        Console.WriteLine("|                                                |");
+                        Console.WriteLine("|  ¡Gracias por participar en nuestra rifa!      |");
+                        Console.WriteLine("|  Mantén este boleto seguro hasta el sorteo.    |");
+                        Console.WriteLine("|                                                |");
+                        Console.WriteLine("|  Su ID: " + Compradorx.Id + "                            |");
+                        Console.WriteLine("|                                                |");
+                        Console.WriteLine("--------------------------------------------------");
+
                         Console.WriteLine($"Boleta {numeroBoleto} comprada exitosamente.");
 
                         break;
                     case 2:
-                     //   CompradorDataManager.UpdateComprador(CompradorUpd);
+                        Console.WriteLine("¿Qué numero de {ID] requiere cambiar?");
+                        Comprador co;
+                    //    CompradorDataManager.UpdateComprador(Compradorx);
                         break;
                     case 3:
                         CompradorDataManager.DeleteComprador("1");
                         break;
                     case 4:
-                //        var getComprador = CompradorDataManager.GetComprador("1");
-                //        Console.WriteLine($"el comprador es: {getComprador.Nombre}");
+                 //      var getComprador = CompradorDataManager.GetComprador(Compradorx.Id);
+                       Console.WriteLine($"el comprador es: {getComprador.Nombre}");
                         break;
              ////       case 5:
              //           if ( != null)

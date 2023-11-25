@@ -76,6 +76,9 @@ namespace Rifa
         {
             Id = (string)json["Id"];
             Nombre = (string)json["Nombre"];
+            FechaPago = (DateTime)json["FechaPago"];
+            MetodoPago = (MetodoPago)(int)json["MetodoPago"];
+            NumeroBoleta = (int)json["NumeroBoleta"];
         }
     }
 }
