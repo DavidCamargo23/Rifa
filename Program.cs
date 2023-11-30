@@ -93,14 +93,14 @@ namespace Rifa
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("|                 BOLETO DE RIFA                 |");
                         Console.WriteLine("|                                                |");
-                        Console.WriteLine("|  Número de Rifa: " + numeroBoleto + "                |");
-                        Console.WriteLine("|  Nombre: " + firstName + lastName + "               |");
+                        Console.WriteLine("|  Número de Rifa: " + numeroBoleto + "         |");
+                        Console.WriteLine("|  Nombre: " + firstName + lastName + "        |");
                         Console.WriteLine("|  Metodo de pago: " + MetodoPago + "            |");
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("|  ¡Gracias por participar en nuestra rifa!      |");
                         Console.WriteLine("|  Mantén este boleto seguro hasta el sorteo.    |");
                         Console.WriteLine("|                                                |");
-                        Console.WriteLine("|  Su ID: " + Compradorx.Id + "                            |");
+                        Console.WriteLine("|  Su ID: " + Compradorx.Id + "                     |");
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("--------------------------------------------------");
 
