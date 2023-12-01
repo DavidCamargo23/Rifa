@@ -92,7 +92,9 @@ namespace Rifa
                         Compradorx = CompradorDataManager.AddComprador(new Comprador(firstName, lastName, fechaSorteo, (MetodoPago)MetodoPago, numeroBoleto));
                         Console.WriteLine("--------------------------------------------------");
                         Console.WriteLine("|                                                |");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("|                 BOLETO DE RIFA                 |");
+                        Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("|  Número de Rifa: " + numeroBoleto + "                            |");
                         Console.WriteLine("|  Nombre: " + firstName +" "+ lastName + "                         |");
@@ -114,9 +116,10 @@ namespace Rifa
                         CompradorDataManager.UpdateComprador(Compradorx);
                         Console.WriteLine("La opción a cambiar es:");
                         Console.WriteLine("1. Primer nombre");
+                        string firstName1 = Console.ReadLine();
                         Console.WriteLine("2. Segundo nombre");
-                        Console.WriteLine("3. Metodo de pago");
-
+                        string lastName1 = Console.ReadLine();
+              //         CompradorDataManager.AddComprador(new Comprador(firstName1, lastName1,fechaSorteo,));
                         break;
                     case 3:
                         Console.WriteLine("¿Qué numero de {ID] requiere eliminar?");
@@ -132,7 +135,7 @@ namespace Rifa
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("|                 BOLETO DE RIFA                 |");
                         Console.WriteLine("|                                                |");
-                        Console.WriteLine("|  Nombre: " + Compradorx.Nombre+ "                         |");
+                        Console.WriteLine("|  Nombre: " + Compradorx.Nombre + "                         |");
                         Console.WriteLine("|  Metodo de pago: " + Compradorx.MetodoPago + "                              |");
                         Console.WriteLine("|                                                |");
                         Console.WriteLine("|  ¡Gracias por participar en nuestra rifa!      |");
