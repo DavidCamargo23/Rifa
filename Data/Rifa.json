@@ -1,5 +1,5 @@
 {
-  "1": "{\"Id\":\"1\",\"Descripcion\":\"********** La rifa de hoy es pequeña la cual contará hasta con 5 boletas. **********\",\"TipoRifa\":1,\"FechaSorteo\":\"2023-11-25T11:48:56.4478896-05:00\",\"QBoletas\":5,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}",
-  "2": "{\"Id\":\"2\",\"Descripcion\":\"********** La rifa de hoy es Mediana la cual contará hasta con 10 boletas. **********\",\"TipoRifa\":2,\"FechaSorteo\":\"2023-11-25T11:48:56.4478896-05:00\",\"QBoletas\":10,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}",
-  "3": "{\"Id\":\"3\",\"Descripcion\":\"********** La rifa de hoy es Grande la cual contará hasta con 20 boletas. **********\",\"TipoRifa\":3,\"FechaSorteo\":\"2023-11-25T11:48:56.4478896-05:00\",\"QBoletas\":20,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}"
+  "1": "{\"Id\":\"1\",\"Descripcion\":\"********** La rifa de hoy es pequeña la cual contará hasta con 5 boletas. **********\",\"TipoRifa\":1,\"FechaSorteo\":\"2023-11-30T18:49:04.6733257-05:00\",\"QBoletas\":5,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}",
+  "2": "{\"Id\":\"2\",\"Descripcion\":\"********** La rifa de hoy es Mediana la cual contará hasta con 10 boletas. **********\",\"TipoRifa\":2,\"FechaSorteo\":\"2023-11-30T18:49:04.6733257-05:00\",\"QBoletas\":10,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}",
+  "3": "{\"Id\":\"3\",\"Descripcion\":\"********** La rifa de hoy es Grande la cual contará hasta con 20 boletas. **********\",\"TipoRifa\":3,\"FechaSorteo\":\"2023-11-30T18:49:04.6733257-05:00\",\"QBoletas\":20,\"ValorBoleta\":0.0,\"Puestos\":null,\"Ganador\":null}"
 }

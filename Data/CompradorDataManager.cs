@@ -67,7 +67,7 @@ namespace Rifa.Data
         {
             return new List<Comprador>();
         }
-        public static Comprador GetComprador(int Id)
+        public static Comprador GetComprador(string Id)
         {
             try
             {
